@@ -4,7 +4,7 @@ import { connect }  from 'react-redux';
 import { withRouter } from 'react-router';
 
 const ShortenedUrl = props => (
-  <a>http://localhost:3000/api/v1/urls/{props.shortenedUrl}</a>
+  <a>{props.shortenedUrl}</a>
 )
 
 const mapStateToProps = state => {

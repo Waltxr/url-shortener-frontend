@@ -17,11 +17,12 @@ export function getShortUrl(decoded_url) {
   }
 }
 
-// export function topUrls() {
-//   return dispatch => {
-//     fetch('http://localhost:3000/api/v1/top-urls')
-//     .then( res => json() )
-//     .then( urls => {
-//       dispatch({type: 'FETCH_TOP_URLS', payload: urls })
-//     })
-// }
+export function getTopUrls() {
+  return dispatch => {
+    fetch('http://localhost:3000/api/v1/top-urls')
+    .then( res => res.json() )
+    .then( urls => {
+      dispatch({type: 'FETCH_TOP_URLS', payload: urls })
+    })
+  }
+}

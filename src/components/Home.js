@@ -4,9 +4,15 @@ import * as actions from '../actions/index';
 import { connect }  from 'react-redux';
 import { withRouter } from 'react-router';
 import ShortenedUrl from './ShortenedUrl'
+import TopUrlsTable from './TopUrlsTable'
 
 
 class Home extends React.Component {
+
+
+  componentWillMount() {
+    this.props.getTopUrls()
+  }
 
   shortenUrl = (url) => {
     this.props.getShortUrl(url)
@@ -17,9 +23,11 @@ class Home extends React.Component {
       <div>
         <CreateShortUrlForm onSubmit={ this.shortenUrl } />
         <ShortenedUrl shortenedUrl={ this.shortenedUrl }/>
+          <TopUrlsTable />
       </div>
     )
    }
+
   }
 
   const mapStateToProps = state => {

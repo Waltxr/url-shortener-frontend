@@ -21,7 +21,7 @@ class TopUrlsTable extends React.Component {
     })
 
     return(
-      <Table basic='very' celled collapsing>
+      <Table celled padded>
         <Table.Header>
           <Table.Row>
             <Table.HeaderCell>Short Url</Table.HeaderCell>

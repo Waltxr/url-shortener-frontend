@@ -1,6 +1,7 @@
 import React from 'react'
 import { Field, reduxForm } from 'redux-form'
 import { Button, Message, Input } from 'semantic-ui-react'
+import { Container } from 'semantic-ui-react'
 
 
 class CreateShortUrlForm extends React.Component {
@@ -26,11 +27,13 @@ class CreateShortUrlForm extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.props.handleSubmit}>
-        <Field name="decoded_url" component={this.urlInput} />
-        <br/>
-        <Button fluid type="submit">Submit</Button>
-      </form>
+      <Container style={{marginTop: '10em'}}>
+        <form onSubmit={this.props.handleSubmit}>
+          <Field name="decoded_url" component={this.urlInput} />
+          <br/>
+          <Button fluid type="submit">Submit</Button>
+        </form>
+      </Container>
     );
   }
 
@@ -43,7 +46,6 @@ const validate = values => {
   }
   return errors
 }
-
 
 export default reduxForm({
   form: 'shortenUrl',

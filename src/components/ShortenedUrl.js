@@ -4,7 +4,11 @@ import { connect }  from 'react-redux';
 import { withRouter } from 'react-router';
 
 const ShortenedUrl = props => (
-  <a href={props.shortenedUrl} target='_blank'>{props.shortenedUrl}</a>
+  <div>
+    <br></br>
+      <a href={props.shortenedUrl} target='_blank'>{props.shortenedUrl}</a>
+    <br></br>
+  </div>
 )
 
 const mapStateToProps = state => {

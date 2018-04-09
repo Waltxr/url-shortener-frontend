@@ -5,10 +5,10 @@ import { connect }  from 'react-redux';
 import { withRouter } from 'react-router';
 import ShortenedUrl from './ShortenedUrl'
 import TopUrlsTable from './TopUrlsTable'
-
+import FixedHeader from './FixedHeader'
+import { Container, Header } from 'semantic-ui-react'
 
 class Home extends React.Component {
-
 
   componentWillMount() {
     this.props.getTopUrls()
@@ -21,9 +21,15 @@ class Home extends React.Component {
   render() {
     return(
       <div>
-        <CreateShortUrlForm onSubmit={ this.shortenUrl } />
-        <ShortenedUrl shortenedUrl={ this.shortenedUrl }/>
+        <FixedHeader />
+        <Container>
+          <CreateShortUrlForm onSubmit={ this.shortenUrl } />
+          <ShortenedUrl shortenedUrl={ this.shortenedUrl }/>
+          <Header as="h3">
+            Top 100 Most Entered URLS:
+          </Header>
           <TopUrlsTable />
+        </Container>
       </div>
     )
    }

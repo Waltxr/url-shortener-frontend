@@ -6,7 +6,7 @@ import { withRouter } from 'react-router';
 const ShortenedUrl = props => (
   <div>
     <br></br>
-      <a href={props.shortenedUrl} target='_blank'>{props.shortenedUrl}</a>
+      <a className='shortUrl' href={props.shortenedUrl} target='_blank'>{props.shortenedUrl} </a>
     <br></br>
   </div>
 )

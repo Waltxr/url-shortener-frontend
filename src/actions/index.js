@@ -2,7 +2,9 @@ const BASE_URL = 'http://localhost:3000/api/v1/'
 
 export function getShortUrl(decoded_url) {
   let url = decoded_url.decoded_url
-  if (url !== 'http://' || url != 'https://') {
+  if (url.slice(0,7) === 'http://' || url.slice(0, 8) === 'https://') {
+    decoded_url.decoded_url = url
+  } else {
     decoded_url.decoded_url = 'http://' + url
   }
   return dispatch => {

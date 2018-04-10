@@ -8,7 +8,7 @@ import * as actions from '../actions/index';
 class TopUrlsTable extends React.Component {
 
   render() {
-    const url = 'https://shortenurll.herokuapp.com/api/v1/urls/'
+    const url = 'http://localhost:3000/api/v1/urls/'
     const cells = this.props.topUrls
     .map((url) => {
       return(

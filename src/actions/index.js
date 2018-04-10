@@ -1,8 +1,8 @@
-const BASE_URL = 'http://localhost:3001/api/v1/'
+const BASE_URL = 'http://localhost:3000/api/v1/'
 
 export function getShortUrl(decoded_url) {
   let url = decoded_url.decoded_url
-  if (url != 'http://' || url != 'https://') {
+  if (url !== 'http://' || url != 'https://') {
     decoded_url.decoded_url = 'http://' + url
   }
   return dispatch => {

@@ -1,4 +1,4 @@
-const BASE_URL = 'https://shortenurll.herokuapp.com/api/v1/'
+const BASE_URL = 'http://localhost:3001/api/v1/'
 
 export function getShortUrl(decoded_url) {
   let url = decoded_url.decoded_url

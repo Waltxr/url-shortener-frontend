@@ -2,7 +2,7 @@ import React from 'react'
 import { Header, Table } from 'semantic-ui-react'
 
 const TopUrlsCell = props => {
-    let url = `https://shortenurll.herokuapp.com/api/v1/urls${props.shortened_url}`
+    let url = `http://localhost:3001/api/v1/urls${props.shortened_url}`
     return (
       <Table.Row>
         <Table.Cell>

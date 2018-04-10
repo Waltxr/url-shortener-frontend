@@ -14,6 +14,14 @@ const TopUrlsCell = props => {
         <Table.Cell>
           <Header as="h4">
             <Header.Content>
+              <a href={props.decoded_url} target='_blank'>{props.decoded_url}</a>
+            </Header.Content>
+          </Header>
+        </Table.Cell>
+
+        <Table.Cell>
+          <Header as="h4">
+            <Header.Content>
               {props.access_count}
             </Header.Content>
           </Header>

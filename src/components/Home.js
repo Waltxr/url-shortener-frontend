@@ -26,7 +26,7 @@ class Home extends React.Component {
           <CreateShortUrlForm onSubmit={ this.shortenUrl } />
           <ShortenedUrl shortenedUrl={ this.shortenedUrl }/>
           <Header as="h3">
-            Top 100 Most Entered URLS:
+            Top 100 Most Frequently Accessed URLS
           </Header>
           <TopUrlsTable />
         </Container>

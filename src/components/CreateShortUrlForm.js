@@ -16,7 +16,6 @@ class CreateShortUrlForm extends React.Component {
             header='Error'
             content={error} />}
         <Input
-          type='url'
           error={hasError}
           fluid
           placeholder='Enter URL to be shortened...'

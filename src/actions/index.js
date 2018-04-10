@@ -1,6 +1,12 @@
+const BASE_URL = 'https://shortenurll.herokuapp.com/api/v1/'
+
 export function getShortUrl(decoded_url) {
+  let url = decoded_url.decoded_url
+  if (url != 'http://' || url != 'https://') {
+    decoded_url.decoded_url = 'http://' + url
+  }
   return dispatch => {
-    fetch('http://localhost:3000/api/v1/shortener', {
+    fetch(BASE_URL + 'shortener', {
     	method: 'POST',
     	headers: {
     	 'Content-Type': 'application/json',
@@ -19,7 +25,7 @@ export function getShortUrl(decoded_url) {
 
 export function getTopUrls() {
   return dispatch => {
-    fetch('http://localhost:3000/api/v1/top-urls')
+    fetch(BASE_URL + 'top-urls')
     .then( res => res.json() )
     .then( urls => {
       dispatch({type: 'FETCH_TOP_URLS', payload: urls })

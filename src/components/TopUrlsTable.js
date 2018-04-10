@@ -8,12 +8,12 @@ import * as actions from '../actions/index';
 class TopUrlsTable extends React.Component {
 
   render() {
-
+    const url = 'https://shortenurll.herokuapp.com/api/v1/urls/'
     const cells = this.props.topUrls
     .map((url) => {
       return(
         <TopUrlsCell
-          shortened_url={"http://localhost:3000/api/v1/urls/" + url.slug}
+          shortened_url={"/"+url.slug}
           decoded_url={url.decoded_url}
           access_count={url.access_count}
         />
@@ -25,6 +25,7 @@ class TopUrlsTable extends React.Component {
         <Table.Header>
           <Table.Row>
             <Table.HeaderCell>Short Url</Table.HeaderCell>
+            <Table.HeaderCell>Original Url</Table.HeaderCell>
             <Table.HeaderCell>Times accessed</Table.HeaderCell>
           </Table.Row>
         </Table.Header>

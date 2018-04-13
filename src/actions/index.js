@@ -1,12 +1,12 @@
 const BASE_URL = 'http://localhost:3000/api/v1/'
 
 export function getShortUrl(decoded_url) {
-  let url = decoded_url.decoded_url
-  if (url.slice(0,7) === 'http://' || url.slice(0, 8) === 'https://') {
-    decoded_url.decoded_url = url
-  } else {
-    decoded_url.decoded_url = 'http://' + url
-  }
+  // let url = decoded_url.decoded_url
+  // if (url.slice(0,7) === 'http://' || url.slice(0, 8) === 'https://') {
+  //   decoded_url.decoded_url = url
+  // } else {
+  //   decoded_url.decoded_url = 'http://' + url
+  // }
   return dispatch => {
     fetch(BASE_URL + 'shortener', {
     	method: 'POST',
@@ -20,7 +20,13 @@ export function getShortUrl(decoded_url) {
     })
     .then( res => res.json() )
     .then( shortUrl => {
-      dispatch({ type: 'SHORTEN_URL', payload: shortUrl.slug})
+      if (shortUrl.errors) {
+        dispatch({ type: 'ADD_ERROR', payload: shortUrl.errors })
+      }
+      else {
+        dispatch({ type: 'SHORTEN_URL', payload: shortUrl.slug})
+        dispatch({ type: 'REMOVE_ERROR'})
+      }
     })
   }
 }

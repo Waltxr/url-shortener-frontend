@@ -22,10 +22,11 @@ export function getShortUrl(decoded_url) {
     .then( shortUrl => {
       if (shortUrl.errors) {
         dispatch({ type: 'ADD_ERROR', payload: shortUrl.errors })
+        dispatch({ type: 'OPEN_MODAL', payload: true })
       }
       else {
         dispatch({ type: 'SHORTEN_URL', payload: shortUrl.slug})
-        dispatch({ type: 'REMOVE_ERROR'})
+        dispatch({ type: 'REMOVE_ERROR', payload: [] })
       }
     })
   }
@@ -39,4 +40,8 @@ export function getTopUrls() {
       dispatch({type: 'FETCH_TOP_URLS', payload: urls })
     })
   }
+}
+
+export function handleModalClose() {
+  return {type: 'CLOSE_MODAL', payload: false}
 }

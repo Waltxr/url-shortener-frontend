@@ -6,7 +6,7 @@ import { withRouter } from 'react-router';
 const UserErrors = props => (
   <div>
     <br></br>
-      <p className='UserErrors'>{props.userErrors}</p>
+      <p className='userErrors'>{props.userErrors}</p>
     <br></br>
   </div>
 )

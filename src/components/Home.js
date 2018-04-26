@@ -8,6 +8,7 @@ import TopUrlsTable from './TopUrlsTable'
 import FixedHeader from './FixedHeader'
 import { Container, Header } from 'semantic-ui-react'
 import UserErrors from './UserErrors'
+import ErrorModal from './ErrorModal'
 
 class Home extends React.Component {
 
@@ -26,6 +27,7 @@ class Home extends React.Component {
         <Container>
           <CreateShortUrlForm onSubmit={ this.shortenUrl } />
           <UserErrors />
+          <ErrorModal />
           <ShortenedUrl shortenedUrl={ this.shortenedUrl }/>
           <Header as="h3">
             Top 100 Most Frequently Accessed URLS
